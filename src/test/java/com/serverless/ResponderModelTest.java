@@ -23,4 +23,12 @@ public class ResponderModelTest {
         assertEquals(response, "10");
     }
 
+
+    @Test
+    public void which_of_the_following_numbers_is_the_largest_794_69(){
+        ResponderModel model = new ResponderModel();
+        String response = model.answer("which of the following numbers is the largest: 794, 69");
+        assertEquals(response, "794");
+    }
+
 }
