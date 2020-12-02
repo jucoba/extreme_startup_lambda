@@ -14,6 +14,13 @@ public class ResponderModel {
         Matcher sumMatcher = Pattern.compile(".*what is the sum of (\\d+) and (\\d+)").matcher(question);
         Matcher mayorMatcher = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+)").matcher(question);
         Matcher multiMatcher = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)").matcher(question);
+        Matcher sumMatcher2 = Pattern.compile(".*what is (\\d+) plus (\\d+)").matcher(question);
+
+        if (sumMatcher2.matches()) {
+            return String.valueOf(Integer.parseInt(sumMatcher2.group(1)) + Integer.parseInt(sumMatcher2.group(2)));
+
+
+        }
         if (sumMatcher.matches()) {
             return String.valueOf(Integer.parseInt(sumMatcher.group(1)) + Integer.parseInt(sumMatcher.group(2)));
         }

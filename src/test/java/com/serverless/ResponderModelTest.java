@@ -46,4 +46,12 @@ public class ResponderModelTest {
 
     }
 
+    @Test
+    public void what_is_0_plus_7() {
+        ResponderModel model = new ResponderModel();
+        String response = model.answer("what is 0 plus 7");
+        assertEquals(response, "7");
+
+    }
+
 }
