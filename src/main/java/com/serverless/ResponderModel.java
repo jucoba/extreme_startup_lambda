@@ -18,7 +18,14 @@ public class ResponderModel {
         }
 
         if (mayorMatcher.matches()) {
-            return String.valueOf(794);
+            int num1 = Integer.parseInt(mayorMatcher.group(1));
+            int num2 = Integer.parseInt(mayorMatcher.group(2));
+            if (num1 > num2) {
+                return  String.valueOf(num1);
+            }else {
+                return String.valueOf(num2);
+            }
+
         }
         
         return teamName;
