@@ -15,6 +15,12 @@ public class ResponderModel {
         Matcher mayorMatcher = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+)").matcher(question);
         Matcher multiMatcher = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)").matcher(question);
         Matcher sumMatcher2 = Pattern.compile(".*what is (\\d+) plus (\\d+)").matcher(question);
+        Matcher diffMatcher = Pattern.compile(".*what is (\\d+) minus (\\d+)").matcher(question);
+
+        if (diffMatcher.matches()) {
+            return String.valueOf(Integer.parseInt(diffMatcher.group(1)) - Integer.parseInt(diffMatcher.group(2)));
+
+        }
 
         if (sumMatcher2.matches()) {
             return String.valueOf(Integer.parseInt(sumMatcher2.group(1)) + Integer.parseInt(sumMatcher2.group(2)));
