@@ -13,6 +13,7 @@ public class ResponderModel {
 
         Matcher sumMatcher = Pattern.compile(".*what is the sum of (\\d+) and (\\d+)").matcher(question);
         Matcher mayorMatcher = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+)").matcher(question);
+        Matcher multiMatcher = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)").matcher(question);
         if (sumMatcher.matches()) {
             return String.valueOf(Integer.parseInt(sumMatcher.group(1)) + Integer.parseInt(sumMatcher.group(2)));
         }
@@ -26,6 +27,12 @@ public class ResponderModel {
                 return String.valueOf(num2);
             }
 
+        }
+
+        if (multiMatcher.matches()) {
+            int num1 = Integer.parseInt(multiMatcher.group(1));
+            int num2 = Integer.parseInt(multiMatcher.group(2));
+            return String.valueOf(num1 * num2);
         }
         
         return teamName;

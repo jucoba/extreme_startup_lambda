@@ -38,4 +38,12 @@ public class ResponderModelTest {
         assertEquals(response, "87");
     }
 
+    @Test
+    public void what_is_0_multiplied_by_0(){
+        ResponderModel model = new ResponderModel();
+        String response = model.answer("what is 0 multiplied by 0");
+        assertEquals(response, "0");
+
+    }
+
 }
