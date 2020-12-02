@@ -14,8 +14,13 @@ public class ResponderModelTest {
         ResponderModel model = new ResponderModel();
         String response = model.answer("");
         assertEquals(response, "Jubel");
+    }
 
-
+    @Test
+    public void sumar_3_7_debe_dar_10(){
+        ResponderModel model = new ResponderModel();
+        String response = model.answer("what is the sum of 3 and 7");
+        assertEquals(response, "10");
     }
 
 }
