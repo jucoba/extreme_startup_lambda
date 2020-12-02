@@ -16,6 +16,11 @@ public class ResponderModel {
         Matcher multiMatcher = Pattern.compile(".*what is (\\d+) multiplied by (\\d+)").matcher(question);
         Matcher sumMatcher2 = Pattern.compile(".*what is (\\d+) plus (\\d+)").matcher(question);
         Matcher diffMatcher = Pattern.compile(".*what is (\\d+) minus (\\d+)").matcher(question);
+        Matcher eiffelMatcher = Pattern.compile("which city is the Eiffel tower in").matcher(question);
+
+        if (eiffelMatcher.matches()) {
+            return "Paris";
+        }
 
         if (diffMatcher.matches()) {
             return String.valueOf(Integer.parseInt(diffMatcher.group(1)) - Integer.parseInt(diffMatcher.group(2)));

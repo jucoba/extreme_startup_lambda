@@ -63,4 +63,13 @@ public class ResponderModelTest {
 
     }
 
+
+    @Test
+    public void which_city_is_the_Eiffel_tower_in() {
+        ResponderModel model = new ResponderModel();
+        String response = model.answer("which city is the Eiffel tower in");
+        assertEquals(response, "Paris");
+    }
+
+
 }
